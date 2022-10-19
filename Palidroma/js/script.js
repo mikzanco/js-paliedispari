@@ -26,9 +26,9 @@ let parola = prompt('scrivi una parola e ti dirò se è palindroma');
 let parolaInversa = invertiParola(parola);
 
 if(parola == parolaInversa){
-    console.log('la parola è palindroma');
+    document.getElementById('check').innerHTML = 'la parola è palindroma'
   } else {
-    console.log('la parola non è palindroma');
+    document.getElementById('check').innerHTML = 'la parola non è palindroma'
   }
   
 function invertiParola(str){
