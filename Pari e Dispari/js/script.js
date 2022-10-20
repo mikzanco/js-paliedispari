@@ -5,27 +5,30 @@
 // Dichiariamo chi ha vinto.
 
 const pariDispari = prompt('scegli e scrivi o pari o dispari.');
-const pickNumberU = prompt ('scegli un numero da 1 a 5');
-console.log(pariDispari);
-console.log(pickNumberU);
-const numeriPc = [1, 2, 3, 4, 5];
+// add parseInt per rendere il numero inserito nel prompt un vero numero e non una stringa
+const pickNumberU = parseInt(prompt ('scegli un numero da 1 a 5'));
 
-const randomIndexPc = Math.floor(Math.random() * numeriPc.length);
-    console.log(randomIndexPc);
+// numPc 
+const numPc = getRandomNumber(1, 5);
+const somma = pickNumberU + numPc;
+const risultato = checkPariDispari(somma);
+const vincitore = checkWinner(pariDispari, risultato);
 
-    let
+console.log(pickNumberU, numPc, somma, risultato,);
+console.log(vincitore);
 
-function pcPickNumber(){
+function getRandomNumber(max, min){
+    return Math.floor(Math.random() * (max - min +1)) + min;
+    // const randomIndexPc = Math.floor(Math.random() * numeriPc.length);
+}
+
+function checkPariDispari(num){
     
-    
-    if (([pickNumberU + randomIndexPc] % 2 === 0) && (pariDispari === 'pari')) {
-        
-        return 'hai vinto';
-    
-    }else if (!([pickNumberU + randomIndexPc] % 2 === 0) && (pariDispari === 'dispari')) {
-        
-        return 'hai vinto';
-    }else{
-        return 'ha vinto il pc';
-    }
+    if(num % 2) return 'DISPARI';
+    return 'PARI';
+}
+
+function checkWinner(pariDispari, risultato){
+    if(pariDispari.toUpperCase() === risultato) return 'Vince l\'utente';
+    return 'Vince il computer';
 }

@@ -5,18 +5,6 @@
 
 
 
-// trasformo la parola in un array di lettere che compongono la parola.
-
-
-// parolaDivisa che ora è un array lo giro con il metodo revese
-
-
-// console.log(parolaDivisa_g);
-// unisco di nuovo le lettere che componog l'array per comporre la parola girata.
-
-
-// console.log(parolaInvertita);
-// adesso confornto le due parole.
 
 
 
@@ -25,17 +13,16 @@ let parola = prompt('scrivi una parola e ti dirò se è palindroma');
 
 let parolaInversa = invertiParola(parola);
 
-if(parola == parolaInversa){
+// add .toLowerCase per rendere la parola completamente minuscola
+// add .trim per togliere gli spazi 
+if(parola.toLowerCase() == parolaInversa.toLowerCase()){
     document.getElementById('check').innerHTML = 'la parola è palindroma'
   } else {
     document.getElementById('check').innerHTML = 'la parola non è palindroma'
   }
   
 function invertiParola(str){
+  // in questo punto scompongo in array inverto e ricompongo la parola in array. '' lo uso per indicare il punto di divisione
   var strInversa = str.split('').reverse().join('');  
   return strInversa;
 }
-
-
-
-// console.log(parola);
