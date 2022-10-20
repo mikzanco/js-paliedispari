@@ -23,7 +23,7 @@ function getRandomNumber(max, min){
 }
 
 function checkPariDispari(num){
-    
+    // operatore ternario: (condizione) ? 'se è vera'  : 'se è falsa';
     if(num % 2) return 'DISPARI';
     return 'PARI';
 }
